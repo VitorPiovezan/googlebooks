@@ -3,5 +3,5 @@ export const ContainerHome = styled.div`
   margin: auto;
   display: flex;
   justify-content: center;
-  max-width: ${props => props.widthScreen};
+  max-width: ${props => props.widthScreen}; ;
 `;
