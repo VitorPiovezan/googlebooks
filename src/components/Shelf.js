@@ -35,7 +35,7 @@ export default function Shelf({mudaScreen, query}) {
                   alt={"default_book"}
                   src={"/img/default_book.png"}
                 />
-                <p>{item.volumeInfo.title}</p>
+                <p style={{textTransform:'capitalize'}}>{item.volumeInfo.title}</p>
               </div>)
             return <div>Livro sem Tumb</div>;
           } else {
@@ -46,7 +46,7 @@ export default function Shelf({mudaScreen, query}) {
                   alt={item.volumeInfo.imageLinks.thumbnail}
                   src={item.volumeInfo.imageLinks.thumbnail}
                 />
-                <p>{item.volumeInfo.title}</p>
+                <p style={{textTransform:'capitalize'}}>{item.volumeInfo.title}</p>
               </div>
             );
           }
