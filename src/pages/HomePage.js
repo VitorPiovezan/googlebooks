@@ -26,7 +26,7 @@ export default function HomePage() {
     <>
       <Header mudaScreen />
       <ContainerHome widthScreen={`${mudaScreen ? '900px' : '100%'}`}>
-        <Shelf />
+        <Shelf mudaScreen={mudaScreen} query={'Aventura'} />
       </ContainerHome>
     </>
   );
