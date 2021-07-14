@@ -7,13 +7,13 @@ import Shelf from '../components/Shelf';
 
 export default function HomePage() {
   const [mudaScreen, setMudaScreen] = useState(
-    window.innerWidth > 900 ? true : false
+    window.innerWidth > 700 ? true : false
   );
 
   useEffect(() => {
     function posicaoScreen() {
       // função para indentificar tamanho da tela
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > 700) {
         setMudaScreen(true);
       } else {
         setMudaScreen(false);
