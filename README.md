@@ -74,21 +74,40 @@ ______________________________________________
 
 Diretórios
 
-- Router.js (Componente de criação de rotas utilizando react-router-dom)
-- index.js (index que faz a ligação entre o root e a aplicação)
-- index.css (estilo padrão que procede na aplicação)
-Public
-  - index.js (Arquivo root onde é a base principal do projeto)
-src
-  pages
-    - HomePage.js (Pagina home onde engloga todos components referentes a página inicial)
-    - MoreBooks.js (Página de busca e de paginação dos livros)
-  components
-    - Header.js (Componente cabeçalho que é composto por logo e botão de pesquisar)
-    - Shelf.js (Componente que faz a mostra do carousel dos livros na tela home
-  style
-    -Styled.HomePage.js (Estilos feitos em styled-components referente a página HomePage)
-    -Styled.Shelf.js (Estilos feitos em styled-components referente ao componente Shelf)
-    -Styled.Header.js (Estilos feitos em styled-components referente ao componente Header)
-  api
-    -api.js (Rota principal de conexão com a API)
+*Router.js (Componente de criação de rotas utilizando react-router-dom)*
+
+*index.js (index que faz a ligação entre o root e a aplicação)*
+
+*index.css (estilo padrão que procede na aplicação)*
+
+* Public
+
+  *index.js (Arquivo root onde é a base principal do projeto)*
+  
+* src
+
+  * pages
+  
+      *HomePage.js (Pagina home onde engloga todos components referentes a página inicial)*
+    
+      *MoreBooks.js (Página de busca e de paginação dos livros)*
+    
+  * components
+  
+      *Header.js (Componente cabeçalho que é composto por logo e botão de pesquisar)*
+    
+      *Shelf.js (Componente que faz a mostra do carousel dos livros na tela home*
+    
+  * style
+  
+      *Styled.HomePage.js (Estilos feitos em styled-components referente a página HomePage)*
+    
+      *Styled.Shelf.js (Estilos feitos em styled-components referente ao componente Shelf)*
+    
+      *Styled.Header.js (Estilos feitos em styled-components referente ao componente Header)*
+    
+  * api
+  
+      *api.js (Rota principal de conexão com a API)*
+
+_______________________________________________
