@@ -10,10 +10,38 @@ export default function HomePage({ mudaScreen }) {
     <>
       <Header mudaScreen />
       <ContainerHome widthScreen={`${mudaScreen ? '900px' : '100%'}`}>
-        <Shelf mudaScreen={mudaScreen} query={'Aventura'} />
-        <Shelf mudaScreen={mudaScreen} query={'Infantil'} />
-        <Shelf mudaScreen={mudaScreen} query={'Destaques'} />
-        <Shelf mudaScreen={mudaScreen} query={'Ação'} />
+        <Shelf
+          mudaScreen={mudaScreen}
+          query={'Aventura'}
+          colorBackground={'#fff'}
+          colorText={'#595A5C'}
+          colorTitle={'#2D2D2E'}
+          borderradius={'0 15px 15px 0'}
+        />
+        <Shelf
+          mudaScreen={mudaScreen}
+          query={'Infantil'}
+          colorBackground={'#fff'}
+          colorText={'#595A5C'}
+          colorTitle={'#2D2D2E'}
+          borderradius={'0 15px 15px 0'}
+        />
+        <Shelf
+          mudaScreen={mudaScreen}
+          query={'Destaques'}
+          colorBackground={'#47B7ED'}
+          colorText={'#fff'}
+          colorTitle={'#fff'}
+          borderradius={'0 15px 0 15px'}
+        />
+        <Shelf
+          mudaScreen={mudaScreen}
+          query={'Ação'}
+          colorBackground={'#fff'}
+          colorText={'#595A5C'}
+          colorTitle={'#2D2D2E'}
+          borderradius={'0 15px 15px 0'}
+        />
       </ContainerHome>
     </>
   );

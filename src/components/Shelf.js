@@ -1,10 +1,17 @@
 import Slider from 'react-slick';
 import api from '../api/api';
 import { useState, useEffect } from 'react';
-import { TitleBook, TumbBooks } from '../style/Styled.Shelf';
+import { TitleBook, TumbBooks, TumbBooksMore } from '../style/Styled.Shelf';
 import { Link } from 'react-router-dom';
 
-export default function Shelf({ mudaScreen, query }) {
+export default function Shelf({
+  mudaScreen,
+  query,
+  colorBackground,
+  colorText,
+  colorTitle,
+  borderradius,
+}) {
   const settings = {
     //configurações da biblioteca Slick para o uso de carousel
     infinite: false,
@@ -26,13 +33,20 @@ export default function Shelf({ mudaScreen, query }) {
   }, []);
 
   return (
-    <div style={{ maxWidth: '100%', marginLeft: '25px' }}>
-      <h2>{query}</h2>
+    <div
+      style={{
+        maxWidth: '100%',
+        padding: '0 0 0 25px',
+        backgroundColor: `${colorBackground}`,
+      }}
+    >
+      <h2 style={{ color: `${colorTitle}` }}>{query}</h2>
       <div
         style={{
           width: '100%',
           overflow: 'hidden',
           margin: 'auto',
+          color: `${colorText}`,
         }}
       >
         <Slider {...settings}>
@@ -43,6 +57,7 @@ export default function Shelf({ mudaScreen, query }) {
                   <TumbBooks
                     widthScreen={`${mudaScreen ? '125px' : '110px'}`}
                     heightScreen={`${mudaScreen ? '175px' : '155px'}`}
+                    borderradius={borderradius}
                     alt={'default_book'}
                     src={'/img/default_book.png'}
                   />
@@ -55,6 +70,7 @@ export default function Shelf({ mudaScreen, query }) {
                   <TumbBooks
                     widthScreen={`${mudaScreen ? '125px' : '110px'}`}
                     heightScreen={`${mudaScreen ? '175px' : '155px'}`}
+                    borderradius={borderradius}
                     alt={item.volumeInfo.imageLinks.thumbnail}
                     src={item.volumeInfo.imageLinks.thumbnail}
                   />
@@ -64,28 +80,19 @@ export default function Shelf({ mudaScreen, query }) {
             }
           })}
           <div>
-            <div
+            <Link
+              to={'/morebooks/' + query}
               style={{
-                width: '155px',
-                height: '200px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+                textDecoration: 'none',
+                color: '#595A5C',
               }}
             >
-              <Link
-                to={'/morebooks/' + query}
-                style={{
-                  textDecoration: 'none',
-                  color: '#666',
-                  backgroundColor: '#dee9ff',
-                  padding: '20px',
-                  borderRadius: '0 30px 30px 0',
-                }}
-              >
-                Ver mais
-              </Link>
-            </div>
+              <TumbBooksMore
+                widthScreen={`${mudaScreen ? '125px' : '110px'}`}
+                heightScreen={`${mudaScreen ? '175px' : '155px'}`}
+              ></TumbBooksMore>
+              <TitleBook>Ver Mais</TitleBook>
+            </Link>
           </div>
           <div></div>
         </Slider>

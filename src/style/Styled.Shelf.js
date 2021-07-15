@@ -11,6 +11,14 @@ export const TitleBook = styled.p`
 
 export const TumbBooks = styled.img`
   width: ${props => props.widthScreen};
+  border-radius: ${props => props.borderradius};
+  border: solid 1px #dedede;
+  height: ${props => props.heightScreen};
+`;
+
+export const TumbBooksMore = styled.div`
+  background-color: '#dffaff';
+  width: ${props => props.widthScreen};
   border-radius: 0 15px 15px 0;
   border: solid 1px #dedede;
   height: ${props => props.heightScreen};
