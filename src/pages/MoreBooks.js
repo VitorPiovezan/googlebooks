@@ -29,7 +29,7 @@ export default function HomePage({ mudaScreen }) {
       setLessBooks(false);
     }
     teste();
-  }, [moreBooks]);
+  }, [moreBooks, id.id]);
 
   function lessBooksscroll() {
     setMoreBooks(moreBooks - 18);
