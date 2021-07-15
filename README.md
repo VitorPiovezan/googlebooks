@@ -3,7 +3,7 @@
 * Autor: Vitor Hugo do Nascimento Piovezan
 * Desafio: 
 
-  Usando a API de Busca de Livros do Google, o candidato deve criar uma aplicação web responsiva em react baseada nesse layout https://marvelapp.com/5i92h5d.
+  Usando a [API de Busca de Livros do Google](https://developers.google.com/books/docs/v1/getting_started), o candidato deve criar uma aplicação web responsiva em react baseada nesse layout https://marvelapp.com/5i92h5d.
 
   As prateleiras da tela inicial são resultados de busca pelo título da prateleira, por exemplo, tomando o layout proposto teríamos 4 chamadas diferentes para a API.
 
@@ -22,16 +22,16 @@ ________________________________________________________________________________
 
 O Projeto foi desenvolvido com a biblioteca React.JS juntamente com algumas dependencias, sendo elas:
 
-* styled-components
-* react-slick
-* axios
-* material-ui
-* react-router-dom
+* [styled-components](https://styled-components.com/docs)
+* [react-slick](https://react-slick.neostack.com/docs/get-started)
+* [axios](https://www.npmjs.com/package/axios)
+* [material-ui](https://material-ui.com/pt/getting-started/installation/)
+* [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 
 Os requisitos minimos cumpridos para o projeto foram:
 
 - Documentação do repositório git
-- Histórico de commits
+- [Histórico de commits](https://github.com/VitorPiovezan/googlebooks/commits/master)
 - React
 - Boas práticas
 - Reproduzir fielmente o layout
@@ -39,23 +39,31 @@ Os requisitos minimos cumpridos para o projeto foram:
 
 Os requisitos desejáveis cumpridos foram:
 
-- React Hooks
+- [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
 - Paginação dos resultados
 
-In the project directory, you can run:
+___________________________________________________________________________
 
 # Iniciando o Projeto
 
 Clone este repositório em sua máquina utilizando:
 
-### git clone https://github.com/VitorPiovezan/googlebooks.git
+$ *git clone https://github.com/VitorPiovezan/googlebooks.git*
 
 Instale as dependencias do projeto com o seguinte comando:
 
-### yarn install
+$ *yarn install*
 ou
-### yarn
+$ *yarn*
 
 Após a instalação das dependenciais inicie o projeto com:
 
-### yarn start
+$ *yarn start*
+
+__________________________________________________
+
+# Api Utilizada
+
+A API utilizada foi disponibilizada pelo Google, tendo a seguinte documentação https://developers.google.com/books/docs/v1/getting_started
+
+caminho usado para comunicação dentro da aplicação: https://www.googleapis.com/books/v1/volumes?q=Query&startIndex=0&maxResults=10
