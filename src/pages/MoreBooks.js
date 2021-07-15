@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../api/api';
 import { ContainerMoreBooks } from '../style/Styled.HomePage';
 import { Header } from '../components/Header';
-import { TitleBook } from '../style/Styled.Shelf';
+import { TitleBook, TumbBooks } from '../style/Styled.Shelf';
 import { useParams } from 'react-router-dom';
 
 export default function HomePage({ mudaScreen }) {
@@ -26,13 +26,9 @@ export default function HomePage({ mudaScreen }) {
           if (item.volumeInfo.imageLinks === undefined) {
             return (
               <div style={{ width: '120px', height: '250px' }} key={item.id}>
-                <img
-                  style={{
-                    width: `${mudaScreen ? '125px' : '110px'}`,
-                    borderRadius: '0 15px 15px 0',
-                    border: 'solid 1px #cecece',
-                    height: `${mudaScreen ? '175px' : '155px'}`,
-                  }}
+                <TumbBooks
+                  widthScreen={`${mudaScreen ? '125px' : '110px'}`}
+                  heightScreen={`${mudaScreen ? '175px' : '155px'}`}
                   alt={'default_book'}
                   src={'/img/default_book.png'}
                 />
@@ -42,13 +38,9 @@ export default function HomePage({ mudaScreen }) {
           } else {
             return (
               <div style={{ width: '120px', height: '250px' }} key={item.id}>
-                <img
-                  style={{
-                    width: `${mudaScreen ? '125px' : '110px'}`,
-                    borderRadius: '0 15px 15px 0',
-                    border: 'solid 1px #dedede',
-                    height: `${mudaScreen ? '175px' : '155px'}`,
-                  }}
+                <TumbBooks
+                  widthScreen={`${mudaScreen ? '125px' : '110px'}`}
+                  heightScreen={`${mudaScreen ? '175px' : '155px'}`}
                   alt={item.volumeInfo.imageLinks.thumbnail}
                   src={item.volumeInfo.imageLinks.thumbnail}
                 />
