@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { ContainerHome } from '../style/Styled.HomePage';
 import { Header } from '../components/Header';
 import 'slick-carousel/slick/slick.css';

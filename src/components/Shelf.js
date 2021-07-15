@@ -1,7 +1,12 @@
 import Slider from 'react-slick';
 import api from '../api/api';
 import { useState, useEffect } from 'react';
-import { TitleBook, TumbBooks, TumbBooksMore } from '../style/Styled.Shelf';
+import {
+  TitleBook,
+  TumbBooks,
+  ContainerShelf,
+  SliderContainer,
+} from '../style/Styled.Shelf';
 import { Link } from 'react-router-dom';
 
 export default function Shelf({
@@ -26,29 +31,15 @@ export default function Shelf({
   useEffect(() => {
     async function teste() {
       let res = await api.get(`volumes?q=${query}&startIndex=0&maxResults=10`);
-      console.log(res.data);
       setShelfArray(res.data.items);
     }
     teste();
   }, []);
 
   return (
-    <div
-      style={{
-        maxWidth: '100%',
-        padding: '0 0 0 25px',
-        backgroundColor: `${colorBackground}`,
-      }}
-    >
+    <ContainerShelf bgcolor={colorBackground}>
       <h2 style={{ color: `${colorTitle}` }}>{query}</h2>
-      <div
-        style={{
-          width: '100%',
-          overflow: 'hidden',
-          margin: 'auto',
-          color: `${colorText}`,
-        }}
-      >
+      <SliderContainer txcolor={colorText}>
         <Slider {...settings}>
           {shelfArray.map(item => {
             if (item.volumeInfo.imageLinks === undefined) {
@@ -59,7 +50,7 @@ export default function Shelf({
                     heightScreen={`${mudaScreen ? '175px' : '155px'}`}
                     borderradius={borderradius}
                     alt={'default_book'}
-                    src={'/img/default_book.png'}
+                    src={'/img/default_book_01.png'}
                   />
                   <TitleBook>{item.volumeInfo.title}</TitleBook>
                 </div>
@@ -84,19 +75,22 @@ export default function Shelf({
               to={'/morebooks/' + query}
               style={{
                 textDecoration: 'none',
-                color: '#595A5C',
+                color: colorText,
               }}
             >
-              <TumbBooksMore
+              <TumbBooks
                 widthScreen={`${mudaScreen ? '125px' : '110px'}`}
                 heightScreen={`${mudaScreen ? '175px' : '155px'}`}
-              ></TumbBooksMore>
+                alt={'default_book'}
+                borderradius={borderradius}
+                src={'/img/default_book_more.png'}
+              ></TumbBooks>
               <TitleBook>Ver Mais</TitleBook>
             </Link>
           </div>
           <div></div>
         </Slider>
-      </div>
-    </div>
+      </SliderContainer>
+    </ContainerShelf>
   );
 }

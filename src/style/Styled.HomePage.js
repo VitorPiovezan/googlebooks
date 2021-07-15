@@ -4,10 +4,12 @@ export const ContainerHome = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: ${props => props.widthScreen}; ;
+  max-width: ${props => props.widthScreen};
+  margin-top: 20px;
 `;
 
 export const ContainerMoreBooks = styled.div`
+  color: '#595A5C';
   margin: auto;
   display: flex;
   justify-content: center;

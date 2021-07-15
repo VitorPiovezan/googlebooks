@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react';
 import api from '../api/api';
 import { ContainerMoreBooks } from '../style/Styled.HomePage';
 import { Header } from '../components/Header';
-import { TitleBook, TumbBooks } from '../style/Styled.Shelf';
+import {
+  TitleBook,
+  TumbBooks,
+  BottomMoreLess,
+  ShelfItem,
+} from '../style/Styled.Shelf';
 import { useParams } from 'react-router-dom';
 
 export default function HomePage({ mudaScreen }) {
@@ -16,7 +21,6 @@ export default function HomePage({ mudaScreen }) {
       let res = await api.get(
         `volumes?q=${id.id}&startIndex=${moreBooks}&maxResults=18`
       );
-      console.log(id.id);
       setShelfArray(res.data.items);
     }
     if (moreBooks > 1) {
@@ -44,11 +48,8 @@ export default function HomePage({ mudaScreen }) {
         {shelfArray.map(item => {
           if (item.volumeInfo.imageLinks === undefined) {
             return (
-              <div
-                style={{
-                  width: `${mudaScreen ? '150px' : '120px'}`,
-                  height: '250px',
-                }}
+              <ShelfItem
+                widthScreen={`${mudaScreen ? '150px' : '120px'}`}
                 key={item.id}
               >
                 <TumbBooks
@@ -56,18 +57,15 @@ export default function HomePage({ mudaScreen }) {
                   heightScreen={`${mudaScreen ? '175px' : '155px'}`}
                   borderradius={'0 15px 15px 0'}
                   alt={'default_book'}
-                  src={'/img/default_book.png'}
+                  src={'/img/default_book_01.png'}
                 />
                 <TitleBook>{item.volumeInfo.title}</TitleBook>
-              </div>
+              </ShelfItem>
             );
           } else {
             return (
-              <div
-                style={{
-                  width: `${mudaScreen ? '150px' : '120px'}`,
-                  height: '250px',
-                }}
+              <ShelfItem
+                widthScreen={`${mudaScreen ? '150px' : '120px'}`}
                 key={item.id}
               >
                 <TumbBooks
@@ -78,27 +76,18 @@ export default function HomePage({ mudaScreen }) {
                   src={item.volumeInfo.imageLinks.thumbnail}
                 />
                 <TitleBook>{item.volumeInfo.title}</TitleBook>
-              </div>
+              </ShelfItem>
             );
           }
         })}
-
+      </ContainerMoreBooks>
+      <ContainerMoreBooks>
         {lessBooks ? (
-          <div
-            style={{ padding: '30px', margin: 'auto', cursor: 'pointer' }}
-            onClick={lessBooksscroll}
-          >
-            Voltar
-          </div>
+          <BottomMoreLess onClick={lessBooksscroll}>Voltar</BottomMoreLess>
         ) : (
           ''
         )}
-        <div
-          style={{ padding: '30px', margin: 'auto', cursor: 'pointer' }}
-          onClick={moreBooksscroll}
-        >
-          Avançar
-        </div>
+        <BottomMoreLess onClick={moreBooksscroll}>Avançar</BottomMoreLess>
       </ContainerMoreBooks>
     </>
   );
