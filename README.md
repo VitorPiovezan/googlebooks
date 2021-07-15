@@ -19,6 +19,7 @@ O Projeto foi desenvolvido com a biblioteca React.JS juntamente com algumas depe
 * react-slick
 * axios
 * material-ui
+* react-router-dom
 
 Os requisitos minimos cumpridos para o projeto foram:
 
