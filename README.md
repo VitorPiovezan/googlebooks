@@ -48,7 +48,7 @@ In the project directory, you can run:
 
 Clone este repositório em sua máquina utilizando:
 
-### git clone git@github.com:VitorPiovezan/googlebooks.git
+### git clone https://github.com/VitorPiovezan/googlebooks.git
 
 Instale as dependencias do projeto com o seguinte comando:
 
