@@ -5,6 +5,7 @@ import {
   InputText,
 } from '../style/Styled.Header';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function Header({ mudaScreen }) {
   const [mudaSearch, setMudaSearch] = useState(false);
@@ -15,7 +16,9 @@ export function Header({ mudaScreen }) {
         {mudaSearch ? (
           <InputText placeholder="Buscar por livros ou autores" type="text" />
         ) : (
-          <img alt="logo google livros" src="/img/logo.png" />
+          <Link to={'/home'}>
+            <img alt="logo google livros" src="/img/logo.png" />
+          </Link>
         )}
 
         <Icon

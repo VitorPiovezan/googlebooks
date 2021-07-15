@@ -5,23 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Shelf from '../components/Shelf';
 
-export default function HomePage() {
-  const [mudaScreen, setMudaScreen] = useState(
-    window.innerWidth > 700 ? true : false
-  );
-
-  useEffect(() => {
-    function posicaoScreen() {
-      // função para indentificar tamanho da tela
-      if (window.innerWidth > 700) {
-        setMudaScreen(true);
-      } else {
-        setMudaScreen(false);
-      }
-    }
-    window.addEventListener('resize', posicaoScreen);
-  }, []);
-
+export default function HomePage({ mudaScreen }) {
   return (
     <>
       <Header mudaScreen />
